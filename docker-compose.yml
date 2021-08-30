@@ -1,0 +1,13 @@
+services:
+  backend:
+    container_name: backend
+    image: expressdghg:1.0
+    environment: 
+      - PORT=3000
+  nginx:
+    container_name: nginx 
+    image: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./nginxconf:/etc/nginx/conf.d
